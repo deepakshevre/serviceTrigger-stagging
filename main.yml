@@ -38,3 +38,10 @@
         src: /home/deepak/Desktop/final-deployment/serviceTrigger.service.j2
         dest: /etc/systemd/system/serviceTrigger.service
       become: yes
+
+    - name: Reloading daemon and Start the service
+      systemd:
+        state: started
+        name: serviceTrigger
+        daemon_reload: yes
+      become: yes
