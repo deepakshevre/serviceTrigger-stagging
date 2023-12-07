@@ -1,0 +1,40 @@
+---
+- name: Connect to AWS server and ping
+  hosts: stagging_servers
+  become: False
+  vars:
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+
+  tasks:
+    - name: Ping the server
+      ping:
+
+    - name: Create directory for Service trigger Service 
+      file:
+        path: /opt/serviceTrigger
+        state: directory
+        owner: wesuser
+        group: wesuser
+
+    - name: Copy serviceTrigger local files to remote host
+      copy:
+        src: /home/deepak/Desktop/serviceTrigger/
+        dest: /opt/serviceTrigger/
+        owner: wesuser
+        group: wesuser
+        mode: "0755" 
+
+    - name: Creating serviceTrigger Service file
+      file:
+        path: /etc/systemd/system/serviceTrigger.service
+        owner: root
+        group: root
+        mode: "0644"
+        state: touch
+      become: yes
+    
+    - name: Copy serviceTrigger.service file from Jinja template to above created service file
+      copy:
+        src: /home/deepak/Desktop/final-deployment/serviceTrigger.service.j2
+        dest: /etc/systemd/system/serviceTrigger.service
+      become: yes
