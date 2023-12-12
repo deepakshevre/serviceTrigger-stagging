@@ -6,8 +6,8 @@
     ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 
   tasks:
-    - name: Ping the server
-      ping:
+   # - name: Ping the server
+   #   ping:
 
     - name: Create directory for Service trigger Service 
       file:
