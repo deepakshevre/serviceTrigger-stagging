@@ -1,4 +1,7 @@
 [stagging_servers]
-18.217.72.252 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem ansible_python_interpreter=/usr/bin/python3
-18.223.236.251 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem ansible_python_interpreter=/usr/bin/python3
-3.147.69.159 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem ansible_python_interpreter=/usr/bin/python3
+18.217.72.252 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem
+18.223.236.251 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem
+3.147.69.159 ansible_ssh_user=wesuser ansible_ssh_private_key_file=/home/deepak/Desktop/New2/jenkins_keys/wesuser.pem 
+
+[stagging_servers:vars]
+ansible_python_interpreter=/usr/bin/python3
