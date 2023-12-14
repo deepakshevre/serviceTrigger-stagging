@@ -4,7 +4,7 @@
   become: False
   vars:
     ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-    ansible_python_interpreter: /usr/bin/python3.10
+    ansible_python_interpreter: /usr/bin/python3
 
   tasks:
     - name: Ping the server
