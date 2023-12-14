@@ -2,7 +2,7 @@
 - name: Connect to AWS server and ping
   hosts: stagging_servers
   gather_facts: false
-  become: False
+  #become: False
   vars:
     ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
     ansible_python_interpreter: /usr/bin/python3
